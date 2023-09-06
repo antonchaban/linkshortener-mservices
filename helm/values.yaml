@@ -1,0 +1,18 @@
+postgresql:
+  fullnameOverride: postgres
+  auth:
+    database: "linkshortener"
+    username: "admin"
+    password: "admin"
+  primary:
+    persistence:
+      size: 2Gi
+      mountPath: /var/lib/postgresql/data
+      
+rabbitmq:
+  fullnameOverride: rabbitmq
+  auth:
+    username: guest
+    password: guest
+  persistence:
+    enabled: false

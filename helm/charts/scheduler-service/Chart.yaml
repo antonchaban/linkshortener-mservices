@@ -1,0 +1,10 @@
+apiVersion: v2
+type: application
+version: 0.0.1
+name: scheduler-service
+appVersion: "0.1"
+description: "scheduler service helm"
+dependencies:
+  - name: common
+    version: 0.1.0
+    repository: file://../common

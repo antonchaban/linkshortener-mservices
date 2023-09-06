@@ -1,0 +1,10 @@
+apiVersion: v2
+type: application
+version: 0.0.1
+name: secure-service
+appVersion: "0.1"
+description: "secure service"
+dependencies:
+  - name: common
+    version: 0.1.0
+    repository: file://../common

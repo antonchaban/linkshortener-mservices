@@ -1,0 +1,31 @@
+image:
+  repository: antohachaban
+  name: secure-service
+  tag: latest
+
+migrations:
+  image:
+    repository: antohachaban
+    name: service-migrations
+    tag: latest
+  config:
+    POSTGRESQL_URL: "postgres://admin:admin@postgres:5432/linkshortener?sslmode=disable"
+    VERSION: "000001"
+
+configs:
+  POSTGRES_DB: "linkshortener"
+  POSTGRES_HOST: "postgres:5432"
+
+secrets:
+  POSTGRES_USER: "YWRtaW4=" # admin
+  POSTGRES_PASSWORD: "YWRtaW4=" # admin
+
+service:
+  ports:
+    - name: http
+      port: 80
+      containerPort: 8080
+
+ingress:
+  path: /login
+  port: http
